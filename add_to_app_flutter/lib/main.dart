@@ -74,9 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     
-    FlutterBookApi.setup(FlutterApiHandler((book){
 
-    }));
   }
 
   void _searchForBook() async {

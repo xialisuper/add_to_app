@@ -1,0 +1,24 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+flutter_application_path = '../add_to_app_flutter'
+load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+
+target 'add_to_app_test2' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for add_to_app_test2
+  install_all_flutter_pods(flutter_application_path)
+
+  #target 'IOSFullScreenTests' do
+   # inherit! :search_paths
+    # Pods for testing
+  #end
+
+  
+end
+
+post_install do |installer|
+  flutter_post_install(installer) if defined?(flutter_post_install)
+end
