@@ -43,6 +43,15 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class FlutterApiHandler extends FlutterBookApi {
+  @override
+  void displayBookDetails(Book book) {
+
+    print(book.toString());
+  }
+
+}
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -59,6 +68,15 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _counter++;
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    
+    FlutterBookApi.setup(FlutterApiHandler((book){
+
+    }));
   }
 
   void _searchForBook() async {
